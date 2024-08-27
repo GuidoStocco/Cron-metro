@@ -36,12 +36,24 @@ export default function App(){
         + ':' + (ss < 10 ? '0' + ss : ss)
 
         setNumero(format)
-      }, 100)
+      }, 1000);
+      setBotao('Parar')
     }
   }
 
   function limpar(){
+    if(tempo !== null){
+      clearInterval(tempo)
+      tempo = null
+    }
 
+    setTimer(numero)
+    setNumero(0)
+    ss = 0;
+    mm = 0;
+    hh = 0;
+
+    setBotao("Iniciar");
   }
 
 
